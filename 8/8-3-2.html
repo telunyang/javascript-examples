@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>範例 8-3-2.html</title>
+    <script>
+    /**
+     * j 為 4 的時候，只跳出內部迴圈，
+     * 但外部迴圈依然會繼續執行，
+     * 只有內部迴圈的 j 走到 4 時候，
+     * 自行跳出
+     */
+    for(let i = 1; i <= 9; i++) {
+        for(let j = 1; j <= 9; j++){
+            if(j == 4){
+                break;
+            }
+            console.log(`i = ${i}, j = ${j}`);
+        }
+    }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
