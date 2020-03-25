@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>範例 5-2-2.html</title>
+    <script>
+    let tmp = {
+        toString: function() { return 'foo' },
+        valueOf: function() { return 123 }
+    }
+    // default，優先使用 valueOf()
+    console.log( tmp == 123 ); // true
+    console.log( tmp == 'foo' ); // false
+    
+    // number，優先使用 valueOf()
+    console.log( +tmp == 123 ); // true
+    console.log( +tmp == 'foo' ); // false
+    
+    // string，優先使用 toString()
+    console.log( `${tmp}` == 123 ); // false
+    console.log( `${tmp}` == 'foo' ); // true          
+    </script>
+</head>
+<body>
+
+</body>
+</html>
