@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>範例 4-2-1.html</title>
+    <script>
+    //parseInt()可以傳回由字串轉換而成的整數。
+    console.log( parseInt("abc") );            // 傳回 NaN
+    console.log( parseInt("123abc") );         // 傳回 123
+    console.log( parseInt("abc123") );         // 傳回 NaN
+    console.log( parseInt("      123abc") );   // 傳回 123
+
+    //parseFloat()可以傳回由字串轉換而成的浮點數。
+    //parseFloat 會傳回一個在String 中之的數值。
+    //如果沒有任何可以傳回的浮點數值，則會傳回 NaN (使用isNaN()可以判斷是否為NaN)。
+    //parseFloat 只傳回第一個數字。前後空格會被省略。
+    console.log( parseFloat("20") );            //傳回 20
+    console.log( parseFloat("30.00") );         //傳回 30
+    console.log( parseFloat("10.68") );         //傳回 10.68
+    console.log( parseFloat("12 22 32") );      //傳回 12
+    console.log( parseFloat("        80   ") ); //傳回 80
+    console.log( parseFloat("378abc") );        //傳回 378
+    console.log( parseFloat("abc378") );        //傳回 NaN
+
+    //Number() 可以將物件轉化成數值。
+    //若無法轉成數字則傳回NaN
+    console.log( Number(true) );               //傳回 1
+    console.log( Number(false) );              //傳回 0
+    console.log( Number(new Date()) );         //傳回 1970/1/1到現在的毫秒數
+    console.log( Number("123") );              //傳回 123
+    console.log( Number("123 456") );          //傳回 NaN
+    </script>
+</head>
+<body>
+
+</body>
+</html>
