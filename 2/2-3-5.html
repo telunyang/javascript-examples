@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>範例 2-3-5.html</title>
+    <style>
+    <!--
+        table, tr, th, td{
+            border: 1px solid;
+        }
+    -->
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>流水編號</th><th>姓名</th><th>年紀</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td><td>張○○</td><td>25</td>
+            </tr>
+            <tr>
+                <td>2</td><td>王○○</td><td>33</td>
+            </tr>
+            <tr>
+                <td>3</td><td>林○○</td><td>19</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br /><br />
+
+    <table>
+        <thead>
+            <tr>
+                <th>流水編號</th><th>姓名</th><th>年紀</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>4</td><td>江○○</td><td>24</td>
+            </tr>
+            <tr>
+                <td>5</td><td>沈○○</td><td>42</td>
+            </tr>
+            <tr>
+                <td>6</td><td>陳○○</td><td>23</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+    var tables = document.getElementsByTagName("table");
+    alert("網頁中包含 " + tables.length + " 個 tables");
+    </script>
+</body>
+</html>
