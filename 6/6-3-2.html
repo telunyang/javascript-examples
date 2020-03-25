@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>範例 6-3-2.html</title>
+    <script>
+    let myStr = "Tang Poem: 年年歲歲花相似，歲歲年年人不同。";
+    document.write("原字串：myStr = " + myStr + "<br>");
+    document.write("換成大寫字母：myStr.toUpperCase() = " + myStr.toUpperCase() + "<br>");
+    document.write("換成小寫字母：myStr.toLowerCase() = " + myStr.toLowerCase() + "<br>");
+    document.write("字串並排：myStr.concat(\"新加的\") = " + myStr.concat("新加的") + "<br>");
+    document.write("抽出字元：myStr.charAt(13) = " + myStr.charAt(13) + "<br>");
+    document.write("抽出 Unicode 字元：myStr.charCodeAt(13) = " + myStr.charCodeAt(13) + "<br>");
+    document.write("抽出子字串：myStr.substr(13, 5) = " + myStr.substr(13, 5) + "<br>");
+    document.write("抽出子字串：myStr.substring(13, 15) = " + myStr.substring(13, 15) + "<br>");
+    document.write("尋找子字串：myStr.indexOf(\"年\") = " + myStr.indexOf("年") + "<br>");
+    document.write("尋找子字串：myStr.lastIndexOf(\"年\") = " + myStr.lastIndexOf("年") + "<br>");
+    document.write("抽出子字串：myStr.slice(13, 15) = " + myStr.slice(13, 15) + "<br>");
+    document.write("取代字串：myStr.replace('不同','相同') = " + myStr.replace('不同','相同') + "<br>");
+    document.write("搜尋字串：myStr.search(/歲歲/) = " + myStr.search(/歲歲/) + "<br>");
+    document.write("匹配字串：myStr.match(/歲歲/) = " + myStr.substr(/歲歲/) + "<br>");
+
+    console.log("切割字串：myStr.split(':') = ");
+    console.log(myStr.split(':'));
+    
+    console.log("匹配字串：myStr.trim() = " + myStr.trim());
+    </script>
+</head>
+<body>
+
+</body>
+</html>
