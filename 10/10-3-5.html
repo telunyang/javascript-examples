@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>範例 10-3-5.html</title>
+    <script>
+    //刪除元素，使用 pop()，將會刪除陣列尾端的資料：
+    let listOfName = ['Alex', 'Bill', 'Cook', 'Darren'];
+    listOfName.pop();
+    console.log(listOfName); // 輸出 [ 'Alex', 'Bill', 'Cook' ]
+    listOfName.pop();
+    console.log(listOfName); // 輸出 [ 'Alex', 'Bill' ]
+
+    //重新初始化陣列
+    listOfName = ['Alex', 'Bill', 'Cook', 'Darren'];
+    let name = listOfName.pop();
+    console.log(name); // 輸出 Darren
+    </script>
+</head>
+<body>
+
+</body>
+</html>

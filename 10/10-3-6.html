@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>範例 10-3-6.html</title>
+    <script>
+    //刪除陣列第一個元素，使用 shift()：
+    let listOfName = ['Alex', 'Bill', 'Cook', 'Darren'];
+    listOfName.shift();
+    console.log(listOfName); // 輸出 [ 'Bill', 'Cook', 'Darren' ]
+    
+    //有時候從尾端刪除的陣列資料，需要放在陣列前端，使用 unshift()：
+    listOfName = ['Alex', 'Bill', 'Cook', 'Darren'];
+    let name = listOfName.pop(); // 從陣列尾端刪除 Darren
+    listOfName.unshift(name); // 將刪除的陣列尾端資料放到陣列前端
+    console.log(listOfName); // 輸出 [ 'Darren', 'Alex', 'Bill', 'Cook' ]
+    </script>
+</head>
+<body>
+
+</body>
+</html>
