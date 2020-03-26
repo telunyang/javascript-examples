@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>範例 9-2-1.html</title>
+    <script>
+    let cat = {
+        legs: 4,
+        name: 'Darren',
+        color: 'Tangerine',
+        ability: {
+            jump: function(){
+                console.log('Jump!');
+            },
+            sound: function(){
+                console.log('Meow~');
+            },
+            sleep: function() {
+                console.log('ZZZzzz...');
+            }
+        }
+    };
+
+    //使用「[ ]」來存取屬性或函式：
+    console.log( cat['legs'] ); // 輸出 4
+    console.log( cat['name'] ); // 輸出 Darren
+    cat['ability'].sleep(); // 輸出 ZZZzzz...
+    cat['ability'].sound(); // 輸出 Meow~
+
+    //使用「.」來存取屬性或函式：
+    console.log( cat.legs ); // 輸出 4
+    console.log( cat.color ); // 輸出 Tangerine
+    cat.ability.sound(); // 輸出 Meow~
+    cat.ability.sleep(); // 輸出 ZZZzzz…
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>範例 9-2-2.html</title>
+    <script>
+    let cat = {
+        legs: 4,
+        name: 'Darren',
+        color: 'Tangerine',
+        ability: {
+            jump: function(){
+                console.log('Jump!');
+            },
+            sound: function(){
+                console.log('Meow~');
+            },
+            sleep: function() {
+                console.log('ZZZzzz...');
+            }
+        }
+    };
+
+    //增加物件屬性：
+    cat['eye_color'] = 'black';
+    cat.habbit = 'play with slave';
+
+    // console.dir 可以列出物件（或陣列）的內容
+    console.dir( cat , {depth: null} ); 
+    </script>
+</head>
+<body>
+
+</body>
+</html>
