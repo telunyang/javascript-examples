@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>範例 12-2-2.html</title>
+    <script>
+    //顯示在 Console 面板
+    (
+        function () {
+            console.log('Hello World!');
+        }
+    )();
+
+    //顯示在 <body> 當中
+    (
+        function () {
+            document.write('Good job!');
+        }
+    )();
+
+    //跳出訊息
+    (
+        function (name) {
+            alert('Good job! ' + name);
+        }
+    )('Darren');
+    </script>
+</head>
+<body>
+
+</body>
+</html>
