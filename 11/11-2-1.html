@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>範例 11-2-1.html</title>
+    <script>
+    //用 for 迴圈實現陣列的複製
+    let arr01 = [1,2,3,4,5];
+    let arr02 = [];
+    for(let i = 0; i < arr01.length; i++){
+        arr02.push(arr01[i]);
+    }
+    console.log(arr01);
+    console.log(arr02);
+
+    //用 slice 方法實現陣列的複製
+    let arr03 = [9,4,8,7];
+    let arr04 = arr03.slice(0);//從索引 0 開始取到最後一個元素，一次回傳
+    console.log(arr03);
+    console.log(arr04);
+
+    //用 concat 方法實現陣列的複製
+    let arr05 = [6,6,6];
+    let arr06 = arr05.concat(); //結合空的東西，代表依然保留原先的陣列內容
+    console.log(arr05);
+    console.log(arr06);
+
+    //用 ... 實現陣列的複製
+    let arr07 = [9,8,7,6,5];
+    let [...arr08] = arr07;
+    console.log(arr07);
+    console.log(arr08);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

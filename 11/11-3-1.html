@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>範例 11-3-1.html</title>
+    <script>
+    //物件初始化
+    let objPerson = {
+        name: "Bill", 
+        age: 25,
+        hairColor: 'black',
+        skinColor: 'beige' 
+    };
+
+    //新增屬性
+    objPerson.hadShoes = true;
+    objPerson.isWoken = true;
+
+    //修改屬性
+    objPerson.age = 26;
+
+    //暫時顯示物件內容
+    console.log(objPerson);
+
+    //刪除屬性
+    delete objPerson.skinColor;
+
+    //顯示物件內容
+    console.log(objPerson);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
