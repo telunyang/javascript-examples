@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>範例 14-1-2.html</title>
+    <script>
+    /**
+     * if else 版本
+     */
+
+    //宣告 Date 物件
+    let date = new Date();
+
+    //宣告變數
+    let year, month, day, hour, minute, second;
+    
+    // 2020，西元年
+    year = date.getFullYear() 
+    
+    // 月份，10 月時執行會出現 9，比正常值少 1，記得加 1
+    if( (date.getMonth() + 1) < 10 ) {
+        month = '0' + (date.getMonth() + 1);
+    } else { 
+        month = (date.getMonth() + 1);
+    };
+    
+    // 25，當月 25 號
+    if( date.getDate() < 10 ) {
+        day = '0' + date.getDate();
+    } else { 
+        day = date.getDate();
+    };
+    
+    // 幾時，例如 14 時
+    if( date.getHours() < 10) {
+        hour = '0' + date.getHours();
+    } else {
+        hour = date.getHours();
+    };
+    
+    // 幾分，例如 58 分
+    if( date.getMinutes() < 10) { 
+        minute = '0' + date.getMinutes();
+    } else { 
+        minute = date.getMinutes();
+    };
+    
+    //幾秒，例如 53 秒
+    if( date.getSeconds() < 10) {
+        second = '0' + date.getSeconds();
+    } else {
+        second = date.getSeconds();
+    };
+    
+    //輸出結果
+    console.log(`${year}-${month}-${day} ${hour}:${minute}:${second}`);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>範例 14-2-2.html</title>
+</head>
+<body>
+    <p id="txt">時間開始</p>
+
+    <script>
+    /* 每 2 秒更新一次 p 元素當中的內文 */
+
+    //取得 p 元素
+    var p = document.getElementById("txt");
+
+    //可以對 setTimeout 裡面的 function block 內容進行排版
+    setTimeout(function(){ 
+        p.innerText = "2 秒";
+    }, 2000);
+
+    setTimeout(function(){ p.innerText = "4 秒" }, 4000);
+    setTimeout(function(){ p.innerText = "6 秒" }, 6000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>範例 14-2-3.html</title>
+    <script>
+    var myWindow = window.open(
+        "https://www.google.com/", 
+        "Google", 
+        "width=800, height=600"
+    );
+    document.write("<p>開新視窗</p>");
+    setTimeout(function(){ myWindow.close() }, 3000);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

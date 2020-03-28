@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>範例 14-2-4.html</title>
+    <script>
+    //宣告變數
+    var myVar;
+
+    //定義函式
+    function myStartFunction() {
+        myVar = setTimeout(alertFunc, 3000, "Runoob", "Google");
+    }
+    
+    //此函式用在 myStartFunction 當中
+    function alertFunc(param1, param2){
+        alert(`你的參數: ${param1}, ${param2}`);
+    }
+    
+    //執行函式
+    myStartFunction();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
