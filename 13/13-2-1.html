@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>範例 13-2-1.html</title>
+    <script>
+    //定義一個函式
+    function test(){
+        //宣告區域變數
+        var var01 = 'A';
+        
+        //宣告全域變數
+        var02 = 'B';
+        
+        document.write('var01 = ' + var01 + '<br>');　// 輸出 A
+　      document.write('var02 = ' + var02 + '<hr>');　// 輸出 B
+    }
+
+    //在 function 外定義變數
+    var var03 = 'C';
+
+    //執行函式
+    test();
+
+    //document.write('var01 = ' + var01 + '<br>');　// 拋出錯誤
+    document.write('var02 = ' + var02 + '<br>');　// 輸出 B
+    document.write('var03 = ' + var03 + '<hr>');　// 輸出 C
+    </script>
+</head>
+<body>
+
+</body>
+</html>

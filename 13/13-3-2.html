@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>範例 13-3-2.html</title>
+    <script>
+    //宣告全域變數
+    strNum = 9487;
+
+    //定義函式
+    function makeFunc(){
+        //宣告變數
+        var strName = 'Bill';
+
+        //內部函式(使用箭頭函式)
+        let displayName = () => {
+            //存取全域變數
+            console.log(strName + ' 說: ' + strNum);
+        }
+
+        //執行內部函式
+        displayName();
+    }
+
+    //執行函式
+    makeFunc();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
