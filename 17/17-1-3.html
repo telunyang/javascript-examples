@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>範例 17-1-3.html</title>
+</head>
+<body>
+    <div id="box" style="width: 300px; height: 100px; background-color: #9999ff;" 
+        onmousemove="move()" 
+        onmouseout="out()">請用滑鼠移過此元素</div>
+
+    <script>
+    //onmousemove 事件所使用的函式
+    function move(){
+        document.getElementById("box").style.backgroundColor = '#33ffff';
+    }
+
+    //onmouseout 事件所使用的函式
+    function out(){
+        document.getElementById("box").style.backgroundColor = '#ff0000';
+    }
+    </script>
+</body>
+</html>

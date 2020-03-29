@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>範例 17-3-1.html</title>
+</head>
+<body>
+    <button id="btn" style="width: 100px; height: 50px;">連點兩下: 0</button>
+
+    <script>
+    //計數用的變數
+    let count = 0;
+    let width = 100;
+    let height = 50;
+    
+    //註冊雙擊事件，每點兩下，按鈕會慢慢變大
+    document.getElementById('btn').addEventListener('dblclick', function(){
+        count += 1; //等於 count++
+        width += 20;
+        height += 20;
+        this.innerText = '連點兩下: ' + count;
+        this.style.width = width;
+        this.style.height = height;
+    });
+    </script>
+</body>
+</html>
