@@ -14,8 +14,8 @@
             'user-agent': 'Mozilla/4.0 MDN Example',
             'content-type': 'application/json'
         },
-        //傳遞資料的方法若為 POST，需要先設定成物件({…})，
-        //再轉成透過 JSON.stringify() 將物件字串化，才能正確執行
+        //傳遞資料的方法若為 POST，需要先設定成物件({…})，加上 body，
+        //最後轉成透過 JSON.stringify() 將物件字串化，才能正確執行
         //body: JSON.stringify({})
     })
     .then(function(res) {
@@ -34,6 +34,7 @@
     .catch(function(err){
         alert(err);
     });
+    
     </script>
 </body>
 </html>
