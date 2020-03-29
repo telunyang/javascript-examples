@@ -1,2 +1,2 @@
 # javascript-examples
-JavaScript 講義範例
+JavaScript 網頁程式設計
