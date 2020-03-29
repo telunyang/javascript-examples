@@ -1,0 +1,97 @@
+<html>
+<head>
+    <title>範例 15-3-1.html</title>
+    <style>
+        .circle {
+            position: absolute;
+            left: 300px;
+            top: 300px;
+            display: none;
+            width: 10px;
+            height: 10px;
+            background-color: gray;
+            border-radius: 50%;
+        }
+
+        .wrap {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap" id="wrap"></div>
+    <div class="circle" id="circle"></div>
+
+    <script>
+    //環狀排列的半徑
+    var radius = 250;
+
+    //取得繪製用圓形的元素
+    var circle = document.getElementById('circle');
+
+    //取得既有圓形（小圓）的元素
+    var wrap = document.getElementById('wrap');
+    
+    //角度
+    var degree = 0
+    
+    //幾個小圓
+    var qty = 100;
+
+    //每次小圓的移動距離
+    var moveLength = 360 / qty;
+
+    //給 clearInterval 用的實體 id
+    var t;
+
+    //定義繪圖函式
+    function draw() {
+        //當前角度加上最後一步的距離，大於等於 360，則結束繪圖
+        if(degree + moveLength >= 360) {
+            clearInterval(t);
+        };
+
+        //計算當前的角度
+        degree += moveLength;
+
+        //計算
+        var radianCos = Math.cos(degree * (Math.PI / 180)) * radius;
+        var radianSin = Math.sin(degree * (Math.PI / 180)) * radius;
+
+        //取得既有圓形的 left 與 top
+        var left = wrap.offsetLeft;
+        var top = wrap.offsetTop;
+
+        //計算小圓的相對位置
+        circle.style.left = left + radius + radianCos;
+        circle.style.top = top + radius - radianSin;
+        
+        //顯示小圓（預設不顯示）
+        circle.style.display = 'block';
+
+        //輸出訊息（debug 用）
+        console.log(
+            left, 
+            top, 
+            (left + radius + radianCos), 
+            (top + radius - radianSin)
+        );
+        
+        //複製小圓
+        var newCircle = circle.cloneNode(true); 
+
+        //將複製小圓放到 <body> 當中
+        document.body.appendChild(newCircle);
+    }
+
+    //透過 setInterval 來週期性執行繪圖函式
+    t = setInterval(function(){ draw(); }, 500);
+    </script>
+</body>
+</html>
