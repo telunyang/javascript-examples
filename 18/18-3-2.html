@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>範例 18-3-2.html</title>
+</head>
+<body>
+    <pre id="codeArea"></pre>
+
+    <script>
+    fetch('https://data.taipei/opendata/datalist/apiAccess?scope=datasetMetadataSearch', {
+        //RESTful 方法，常見的有 GET, POST, PUT, DELETE
+        method: 'GET', 
+        //設定標頭: 指明使用者代理為桌面瀏覽器，同時要求後端伺服器回傳的格式是 json
+        headers: { 
+            'user-agent': 'Mozilla/4.0 MDN Example',
+            'content-type': 'application/json'
+        },
+        //傳遞資料的方法若為 POST，需要先設定成物件({…})，
+        //再轉成透過 JSON.stringify() 將物件字串化，才能正確執行
+        //body: JSON.stringify({})
+    })
+    .then(function(res) {
+        /** 
+        * 使用 fetch，會以 ES6 的 Promise 來回應 (res, 即是 response)，
+        * 回應的值為 ReadableStream 的實體，我們需要使用 json 的方法，
+        * 去取得 json 格式的資料，然而依照 Fetch API 的格式，需要再次 
+        * return 到下一個 .then() 去接收，此時 .then() 裡面的回呼值，
+        * 就會變成帶有實際 json 內容物件，而非 ReadableStream 物件。
+        */
+        return res.json();
+    })
+    .then((json) => {
+        document.getElementById("codeArea").innerHTML = JSON.stringify(json, null, 4);
+    })
+    .catch(function(err){
+        alert(err);
+    });
+    </script>
+</body>
+</html>

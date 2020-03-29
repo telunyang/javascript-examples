@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>範例 18-2-1.html</title>
+</head>
+<body>
+    <pre id="codeArea"></pre>
+
+    <script>
+    //建立 XMLHttpRequest 物件，來進行 ajax 非同步傳輸
+    var req = new XMLHttpRequest();
+    req.open('get','https://data.taipei/opendata/datalist/apiAccess?scope=datasetMetadataSearch');
+    
+    //連線開始時觸發的事件
+    req.onloadstart = function(){
+        console.log('連線開始')
+    }
+    
+    //連線中所觸發的事件
+    req.onload = function(){
+        console.log('連線中')
+        document.getElementById("codeArea").innerHTML = JSON.stringify(JSON.parse(this.responseText), null, 4);
+    }
+    
+    //連線結束後所觸發的事件
+    req.onloadend = function(){
+        console.log('連線結束')
+    }
+    
+    req.send(); //執行連線
+    </script>
+</body>
+</html>

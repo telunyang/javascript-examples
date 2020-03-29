@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>範例 18-3-1.html</title>
+</head>
+<body>
+    <pre id="codeArea"></pre>
+
+    <script>
+    fetch('https://data.taipei/opendata/datalist/apiAccess?scope=datasetMetadataSearch')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(myJson) {
+        console.log(myJson);
+    });
+    </script>
+</body>
+</html>
