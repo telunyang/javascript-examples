@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>範例 16-3-1.html</title>
+</head>
+<body>
+    <a href="https://tw.yahoo.com/" target="_blank">yahoo!</a> <br />
+    <a href="https://zh.wikipedia.org/" target="_blank">維基百科</a> <br /> 
+    <a href="https://www.cwb.gov.tw/" target="_blank">中央氣象局</a> <br />
+    
+    <script>
+    var links = document.links;
+    for(var i = 0; i < links.length; i++) {
+        var linkHref = document.createTextNode(links[i].href);
+        var lineBreak = document.createElement("br");
+        document.body.appendChild(linkHref);
+        document.body.appendChild(lineBreak);
+    }
+    </script>
+</body>
+</html>

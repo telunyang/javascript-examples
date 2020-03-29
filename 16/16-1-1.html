@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>範例 16-1-1.html</title>
+</head>
+<body>
+    <a href="javascript:OpenNewWindow();">開啟新視窗</a>
+    <a href="javascript:CloseNewWindow();">關閉新視窗</a>
+    
+    <script>
+    //宣告變數，給 window 物件用
+    var myWin = null;
+
+    //定義開啟新視窗的函式
+    function OpenNewWindow(){
+        myWin = window.open(
+            "https://www.iii.org.tw/", 
+            "新開視窗: 資策會官網", 
+            "height=600, width=800");
+    } 
+    
+    //定義開啟新視窗的函式
+    function CloseNewWindow(){
+        myWin.close();
+
+        //若是視窗已關閉，則跳出訊息
+        if (myWin.closed) {
+            alert('關閉了新視窗!!');
+        }
+    }
+    </script>
+</body>
+</html>

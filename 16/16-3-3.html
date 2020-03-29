@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>範例 16-3-3.html</title>
+</head>
+<body>
+    <img src="https://www.agrimaccari.com/en/wp-content/uploads/2015/05/girl-500x500.jpg">
+    <hr />
+    <img src="https://www.skitzone.com/wp-content/uploads/2010/06/I_am_nothing__in_the_dark_by_islandtime-630x630-500x500.jpg">
+    <hr />
+    <img src="https://getsocial.nz/wp-content/uploads/2014/12/Evolution_by_will_yen-500x500.png">
+    <hr />
+    
+    <script>
+    var imgList = document.images;
+    for(var i = 0; i < imgList.length; i++) {
+        document.write(imgList[i].src);
+        document.write("<br />");
+    }
+    </script>
+</body>
+</html>
