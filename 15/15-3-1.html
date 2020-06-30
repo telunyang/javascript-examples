@@ -42,7 +42,7 @@
     var degree = 0
     
     //幾個小圓
-    var qty = 100;
+    var qty = 6;
 
     //每次小圓的移動距離
     var moveLength = 360 / qty;
@@ -61,26 +61,29 @@
         degree += moveLength;
 
         //計算
-        var radianCos = Math.cos(degree * (Math.PI / 180)) * radius;
-        var radianSin = Math.sin(degree * (Math.PI / 180)) * radius;
+        var x = Math.cos(degree * (Math.PI / 180)) * radius;
+        var y = Math.sin(degree * (Math.PI / 180)) * radius;
 
         //取得既有圓形的 left 與 top
         var left = wrap.offsetLeft;
         var top = wrap.offsetTop;
 
         //計算小圓的相對位置
-        circle.style.left = left + radius + radianCos;
-        circle.style.top = top + radius - radianSin;
+        circle.style.left = left + radius + x;
+        circle.style.top = top + radius - y;
+
+        //100 + 250 + 250
+        //100 + 250 - 0
         
         //顯示小圓（預設不顯示）
         circle.style.display = 'block';
 
         //輸出訊息（debug 用）
         console.log(
-            left, 
-            top, 
-            (left + radius + radianCos), 
-            (top + radius - radianSin)
+            left + radius, 
+            top + radius,
+            x,
+            y
         );
         
         //複製小圓

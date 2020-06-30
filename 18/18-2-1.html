@@ -12,18 +12,18 @@
     
     //連線開始時觸發的事件
     req.onloadstart = function(){
-        console.log('連線開始')
+        console.log('連線開始');
     }
     
     //連線中所觸發的事件
     req.onload = function(){
-        console.log('連線中')
+        console.log('連線中');
         document.getElementById("codeArea").innerHTML = JSON.stringify(JSON.parse(this.responseText), null, 4);
     }
     
     //連線結束後所觸發的事件
     req.onloadend = function(){
-        console.log('連線結束')
+        console.log('連線結束');
     }
     
     req.send(); //執行連線

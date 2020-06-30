@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>範例 18-2-2.html</title>
+</head>
+<body>
+    <input type="file" name="myFile" id="myFile" onchange="uploadFile()" />
+    <br />
+    <progress id="p" value="0" max="100" style="width: 500px; height: 50px"></progress>
+    <br />
+    <div id="msg"></div>
+
+    <script>
+    function uploadFile(){
+        //取得 progress 物件
+        var progressBar = document.getElementById('p');
+        var myFile = document.getElementById('myFile').files[0];
+        var div = document.getElementById('msg');
+
+        //建立 XMLHttpRequest 物件，來進行 ajax 非同步傳輸
+        var req = new XMLHttpRequest();
+        req.open('post','https://httpbin.org/post');
+        req.setRequestHeader("Content-Type", "multipart/form-data");
+
+        //建立 FormData 物件，夾帶變數(或檔案)，搭配 req.send( formdata ) 送到後端頁面去處理
+        var formdata = new FormData();
+        formdata.append("myFile", myFile);
+
+        //連線開始時觸發的事件
+        req.onloadstart = function(){
+            console.log('連線開始');
+        }
+        
+        //連線中所觸發的事件
+        req.onload = function(){
+            console.log('連線中');
+        }
+        
+        //連線結束後所觸發的事件
+        req.onloadend = function(event){
+            console.log('上傳結束');
+        }
+
+        //顯示當前上傳的進度
+        req.upload.onprogress = function(event) {
+            //計算上傳百分比
+            var percent = (event.loaded / event.total) * 100;
+            
+            //顯示在 div 的內文中
+            div.innerHTML = percent + '%';
+            
+            //將目前上傳的進度，分別放到 progress 元素的屬性當中
+            progressBar.max = event.total;
+            progressBar.value = event.loaded;
+        };
+        
+        req.send(formdata); //執行連線
+    }
+        
+    </script>
+</body>
+</html>
